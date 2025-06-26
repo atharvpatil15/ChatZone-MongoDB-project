@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 require("dotenv").config();
 
-const mongoURI = process.env.MONGO_URL || "mongodb+srv://atharva2005:Patil%402005@cluster0.sikdhtg.mongodb.net/chatApp?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI = process.env.MONGO_URL || "mongodb+srv://atharva2005:Patil%402005@cluster0.sikdhtg.mongodb.net/ChatZone?retryWrites=true&w=majority&appName=Cluster0";
 
 
 
