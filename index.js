@@ -2,11 +2,14 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
-const port = 8080;
+
 const chat = require("./models/chat.js");
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
+const port = process.env.PORT || 8080;
+
+
 
 require("dotenv").config();
 
@@ -33,8 +36,8 @@ async function main() {
 
 }
 
-app.listen("8080", (req, res) => {
-  console.log("app is listening on port", port);
+app.listen(port, () => {
+  console.log("Server running on port", port);
 });
 
 
