@@ -24,7 +24,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/ChatZone");
+  await mongoose.connect("mongodb+srv://atharva2005:<Patil@2005>@cluster0.sikdhtg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 }
 
 app.listen("8080", (req, res) => {
