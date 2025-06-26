@@ -8,6 +8,11 @@ const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 
+require("dotenv").config();
+
+const mongoURI = process.env.MONGO_URL || "mongodb+srv://atharva2005:Patil%402005@cluster0.sikdhtg.mongodb.net/chatApp?retryWrites=true&w=majority&appName=Cluster0";
+
+
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -24,7 +29,8 @@ main()
   });
 
 async function main() {
-  await mongoose.connect("mongodb+srv://atharva2005:<Patil@2005>@cluster0.sikdhtg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+  await mongoose.connect(mongoURI);
+
 }
 
 app.listen("8080", (req, res) => {
